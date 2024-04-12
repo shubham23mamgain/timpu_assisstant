@@ -56,8 +56,6 @@ const DismissableChips = () => {
           </View>
         );
       })}
-
-      {/* <FlatList data={dataSource} renderItem={{item}} /> */}
     </ScrollView>
   );
 };
