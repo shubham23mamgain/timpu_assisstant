@@ -20,7 +20,7 @@ const Footer = () => {
     <View style={{marginBottom: hp(4), marginTop: hp(1)}}>
       <SafeAreaView className="">
         <View
-          style={{width: wp(95), height: hp(12)}}
+          style={{width: wp(90), height: hp(12)}}
           className="bg-blue-100 radius items-center rounded-b-3xl">
           <View className="flex flex-row mt-3 ">
             <View
