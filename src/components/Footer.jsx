@@ -1,11 +1,21 @@
-import {StyleSheet, Text, View, SafeAreaView, Image} from 'react-native';
-import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  Alert,
+  TextInput,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useState} from 'react';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
 const Footer = () => {
+  const [message, setMessage] = useState('');
   return (
     <View style={{marginBottom: hp(4), marginTop: hp(1)}}>
       <SafeAreaView className="">
@@ -16,7 +26,12 @@ const Footer = () => {
             <View
               style={{width: wp(65), height: hp(6)}}
               className="bg-white flex flex-row rounded-2xl">
-              <Text className="p-4"> Type Your Message</Text>
+              <TextInput
+                placeholder=" Type Your Message"
+                value={message}
+                onChangeText={e => setMessage(e)}
+                className="p-4"
+              />
               <Image
                 style={{marginTop: hp(2), marginLeft: wp(10)}}
                 source={require('../../assets/images/paperclip.png')}
@@ -32,11 +47,13 @@ const Footer = () => {
                 backgroundColor: '#4C82EF',
               }}
               className="bg-blue-200 rounded-2xl">
-              <Image
-                style={{marginTop: hp(2), margin: wp(7)}}
-                source={require('../../assets/images/white_arrow.png')}
-                className=""
-              />
+              <TouchableOpacity
+                onPress={() => Alert.alert('Message or Pic Send', message)}>
+                <Image
+                  style={{marginTop: hp(2), margin: wp(7)}}
+                  source={require('../../assets/images/white_arrow.png')}
+                />
+              </TouchableOpacity>
             </View>
           </View>
 

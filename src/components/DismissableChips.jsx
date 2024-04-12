@@ -16,7 +16,10 @@ const DismissableChips = () => {
   const lightblue = 'rgba(239,246,255,1)';
 
   return (
-    <ScrollView horizontal={true} style={{flex: 1, flexDirection: 'row'}}>
+    <ScrollView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      style={{flex: 1, flexDirection: 'row'}}>
       {dataSource.map((item, index) => {
         console.log('Item', item);
         console.log('Items', items);

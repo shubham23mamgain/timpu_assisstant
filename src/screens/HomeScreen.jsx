@@ -1,4 +1,11 @@
-import {StyleSheet, View, Text, ScrollView, Image} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import TopHeader from '../components/Header';
 import Chats from '../components/Chats';
@@ -26,6 +33,12 @@ const HomeScreen = () => {
     {
       name: 'MultiThread',
     },
+    {
+      name: 'Spacious',
+    },
+    {
+      name: 'Leather',
+    },
   ];
   return (
     <ScrollView className="flex-1 bg-white p-4">
@@ -45,7 +58,7 @@ const HomeScreen = () => {
         <Text className="text-gray-400 mb-4">Popular Tags for Hand Bag</Text>
 
         <View className="flex flex-row mb-4" style={{width: wp(85)}}>
-          <ScrollView>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <View className="flex gap-2 flex-row">
               {categories.map(category => (
                 <View
@@ -61,10 +74,15 @@ const HomeScreen = () => {
             </View>
           </ScrollView>
           <View className="p-2 justify-center">
-            <Image
-              style={{width: wp(1.5), height: hp(1.5)}}
-              source={require('../../assets/images/arrow.png')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                categories.filter(c => c.nam);
+              }}>
+              <Image
+                style={{width: wp(1.5), height: hp(1.5)}}
+                source={require('../../assets/images/arrow.png')}
+              />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
